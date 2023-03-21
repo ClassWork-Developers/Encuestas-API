@@ -1,7 +1,7 @@
 import { AdministradoresModel } from '../../Schemas/Administradores.js';
 import { password } from '../../index.js';
 
-export async function CrearUsuario(req, res) {
+export async function CrearAdmin(req, res) {
   const { correo, nombre, clave, icon, clave_especial } = req.body;
   if (clave_especial == password) {
     const Administrador = new AdministradoresModel({

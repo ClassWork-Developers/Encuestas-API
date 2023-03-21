@@ -56,12 +56,11 @@
  *         clave: my-secret-password-encrypted
  */
 
-
 //APARTADO DE DOCUMENTACION POR RUTA
 
 /**
  * @swagger
- * /CrearUsuario:
+ * /CrearAdmin:
  *   post:
  *     summary: Crea un Nuevo Administrador
  *     tags: [Administradores]
@@ -72,6 +71,24 @@
  *           schema:
  *             type: object
  *             $ref: '#/components/schemas/Admins-Register'
+ *     responses:
+ *       200:
+ *         description: Success New Admin!
+ */
+
+/**
+ * @swagger
+ * /LoginAdmin:
+ *   post:
+ *     summary: Login de Administrador
+ *     tags: [Administradores]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Admins-Login'
  *     responses:
  *       200:
  *         description: Success New Admin!
