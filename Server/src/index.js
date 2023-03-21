@@ -34,7 +34,7 @@ const swagerSpect = {
       title: 'Encuestas API',
       version: '1.0.0',
     },
-    servers: [{ url: `https://localhost:${process.env.PORT}` }],
+    servers: [{ url: `http://localhost:${process.env.PORT}` }],
   },
   apis: [`${path.join(__dirname, './Documentation/Docs.js')}`],
 };
