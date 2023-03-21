@@ -1,6 +1,7 @@
 //IMPORTS
 import Express from 'express';
 import cors from 'cors';
+import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import path from 'path';
 import dotenv from 'dotenv';
@@ -8,9 +9,6 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: './.env' });
-
-//AUTO-DEPLOYMENT
-import './controllers/Deploy/Deploy.js';
 
 //ROUTES
 import { routes } from './routes/routes.js';
@@ -41,8 +39,6 @@ const swagerSpect = {
   apis: [`${path.join(__dirname, './Documentation/Docs.js')}`],
 };
 
-//AUTO DEPLOY BD
-
 const app = Express();
 
 //Many Config
@@ -61,3 +57,12 @@ app.set('port', port);
 app.listen(app.get('port'), () => {
   console.log(`[Running] - PORT: ${port}`);
 });
+
+//Conexion Mongo
+mongoose
+  .connect(process.env.URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('[MONGO]-ONLINE'))
+  .catch((e) => console.log(e));
