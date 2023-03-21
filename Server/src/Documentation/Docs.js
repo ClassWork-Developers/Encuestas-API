@@ -56,6 +56,57 @@
  *         clave: my-secret-password-encrypted
  */
 
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Users-Register:
+ *       type: object
+ *       properties:
+ *         nombre:
+ *           type: string
+ *           description: Nombre del Usuario
+ *         correo:
+ *           type: string
+ *           description: Correo del Usuario
+ *         clave:
+ *           type: string
+ *           description: Clave del Usuario
+ *         icon:
+ *           type: string
+ *           description: Icono del Usuario
+ *       required:
+ *         -nombre
+ *         -clave
+ *         -icon
+ *       example:
+ *         nombre: DarkKevo
+ *         correo: DarkKevo@gmail.com
+ *         clave: my-secret-password-encrypted
+ *         icon: www.my-logo-user
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Users-Login:
+ *       type: object
+ *       properties:
+ *         correo:
+ *           type: string
+ *           description: Correo del Usuario
+ *         clave:
+ *           type: string
+ *           description: Clave del Usuario
+ *       required:
+ *         -correo
+ *         -clave
+ *       example:
+ *         correo: DarkKevo@gmail.com
+ *         clave: my-secret-password-encrypted
+ */
+
 //APARTADO DE DOCUMENTACION POR RUTA
 
 /**
@@ -92,4 +143,40 @@
  *     responses:
  *       200:
  *         description: Success New Admin!
+ */
+
+/**
+ * @swagger
+ * /CreateUser:
+ *   post:
+ *     summary: Crea un Nuevo Usuario
+ *     tags: [Usuarios]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Users-Register'
+ *     responses:
+ *       200:
+ *         description: Success New User!
+ */
+
+/**
+ * @swagger
+ * /LoginUser:
+ *   post:
+ *     summary: Login de Usuarios
+ *     tags: [Usuarios]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Users-Login'
+ *     responses:
+ *       200:
+ *         description: Success New User!
  */
