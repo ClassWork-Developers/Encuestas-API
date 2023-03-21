@@ -32,7 +32,7 @@
  *         correo: DarkKevo@gmail.com
  *         clave: my-secret-password-encrypted
  *         icon: www.my-logo-user
- *         clave_especial: secret.developer.code
+ *         clave_especial: my-secret-developers-administrator
  */
 
 /**
