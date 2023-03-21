@@ -107,6 +107,74 @@
  *         clave: my-secret-password-encrypted
  */
 
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Encuestas:
+ *       type: object
+ *       properties:
+ *         nombre:
+ *           type: string
+ *           description: Nombre o Titulo de la Encuesta
+ *       required:
+ *         -nombre
+ *       example:
+ *         nombre: Opiniones Estudiantiles
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Preguntas:
+ *       type: object
+ *       properties:
+ *         pregunta:
+ *           type: string
+ *           description: Texto o enunciado de la pregunta
+ *         id_encuesta:
+ *           type: string
+ *           description: Id de la encuesta a la que pertenece
+ *       required:
+ *         -pregunta
+ *         -id_encuesta
+ *       example:
+ *         pregunta: ¿Como te llamas?
+ *         id_encuesta: 34fbh675655g
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Respuestas:
+ *       type: object
+ *       properties:
+ *         id_encuesta:
+ *           type: string
+ *           description: Id de la encuesta a la que pertenece la respuesta
+ *         id_pregunta:
+ *           type: string
+ *           description: Id de la pregunta a la que pertenece la respuesta
+ *         id_usuario:
+ *           type: string
+ *           description: Id del usuario al cual pertenece la respuesta
+ *         respuesta:
+ *           type: string
+ *           description: Respuesta del Usuario
+ *       required:
+ *         -id_encuesta
+ *         -id_pregunta
+ *         -id_usuario
+ *         -respuesta
+ *       example:
+ *         id_encuesta: 641a37ea1753dbd2b79999b9
+ *         id_pregunta: 641a37fb1753dbd2b79999bb
+ *         id_usuario: 6419ff7a2b894018a12f0012 
+ *         respuesta: Con respecto a este tema me encuentro a favor de lo opinado
+ */
+s
 //APARTADO DE DOCUMENTACION POR RUTA
 
 /**
@@ -179,4 +247,58 @@
  *     responses:
  *       200:
  *         description: Success New User!
+ */
+
+/**
+ * @swagger
+ * /CrearEncuesta:
+ *   post:
+ *     summary: Creacion de Encuestas
+ *     tags: [Encuestas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Encuestas'
+ *     responses:
+ *       200:
+ *         description: Success New Encuesta!
+ */
+
+/**
+ * @swagger
+ * /CrearPregunta:
+ *   post:
+ *     summary: Creacion de Preguntas
+ *     tags: [Preguntas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Preguntas'
+ *     responses:
+ *       200:
+ *         description: Success New Pregunta!
+ */
+
+/**
+ * @swagger
+ * /CrearRespuesta:
+ *   post:
+ *     summary: Creacion de Respuesta
+ *     tags: [Respuestas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Respuestas'
+ *     responses:
+ *       200:
+ *         description: Success New Respuesta!
  */
