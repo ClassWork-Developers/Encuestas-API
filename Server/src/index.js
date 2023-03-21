@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: './.env' });
 
 //AUTO-DEPLOYMENT
-import './controllers/Deploy/Deploy.js'
+import './controllers/Deploy/Deploy.js';
 
 //ROUTES
 import { routes } from './routes/routes.js';
@@ -38,7 +38,7 @@ const swagerSpect = {
     },
     servers: [{ url: `https://localhost:${process.env.PORT}` }],
   },
-  apis: [`${path.join(__dirname, './routes/routes.js')}`],
+  apis: [`${path.join(__dirname, './Documentation/Docs.js')}`],
 };
 
 //AUTO DEPLOY BD
