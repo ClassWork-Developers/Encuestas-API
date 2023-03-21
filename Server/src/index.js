@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: './.env' });
 
 //AUTO-DEPLOYMENT
-import './controllers/Deploy/Deploy.js';
+import './controllers/Deploy/Deploy.js'
 
 //ROUTES
 import { routes } from './routes/routes.js';
@@ -33,7 +33,7 @@ const swagerSpect = {
   definition: {
     openapi: '3.0.0',
     info: {
-      tittle: 'Encuestas API',
+      title: 'Encuestas API',
       version: '1.0.0',
     },
     servers: [{ url: `https://localhost:${process.env.PORT}` }],
@@ -53,7 +53,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/', routes);
-app.use('/Documentation', SwaggerUI.serve, SwaggerUI.setup(SwaggerJsDoc(swagerSpect)));
+app.use('/Docs', SwaggerUI.serve, SwaggerUI.setup(SwaggerJsDoc(swagerSpect)));
 
 //APP set
 app.set('port', port);
