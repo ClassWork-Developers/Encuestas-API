@@ -5,6 +5,7 @@ export async function CrearEncuesta(req, res) {
 
   let Encuesta = new EncuestasModel({
     nombre: nombre,
+    open: true,
   });
 
   Encuesta.save()

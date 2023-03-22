@@ -121,6 +121,7 @@
  *         -nombre
  *       example:
  *         nombre: Opiniones Estudiantiles
+ *         open: true
  */
 
 /**
@@ -152,11 +153,17 @@
  *         nombre:
  *           type: string
  *           description: Nombre o Titulo de la Encuesta
+ *         open: 
+ *           type: boolean
+ *           description: Declara si esta abierto o no el form
  *       required:
  *         -nombre
+ *         -id
+ *         -open
  *       example:
  *         id: 234923rjf2ri
  *         nombre: Opiniones Estudiantiles
+ *         open: true
  */
 
 /**
