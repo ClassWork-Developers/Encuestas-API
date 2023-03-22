@@ -160,6 +160,12 @@
  *         id_usuario:
  *           type: string
  *           description: Id del usuario al cual pertenece la respuesta
+ *         nombre:
+ *           type: string
+ *           description: nombre del usuario
+ *         icon:
+ *           type: string
+ *           description: icono del usuario
  *         respuesta:
  *           type: string
  *           description: Respuesta del Usuario
@@ -167,11 +173,15 @@
  *         -id_encuesta
  *         -id_pregunta
  *         -id_usuario
+ *         -nombre
+ *         -icon
  *         -respuesta
  *       example:
  *         id_encuesta: 641a37ea1753dbd2b79999b9
  *         id_pregunta: 641a37fb1753dbd2b79999bb
  *         id_usuario: 6419ff7a2b894018a12f0012 
+ *         nombre: Kevin
+ *         icon: www.my.icon.com
  *         respuesta: Con respecto a este tema me encuentro a favor de lo opinado
  */
 s
@@ -301,4 +311,65 @@ s
  *     responses:
  *       200:
  *         description: Success New Respuesta!
+ */
+
+/**
+ * @swagger
+ * /MostrarEncuestas:
+ *   get:
+ *     summary: Retornar todos las encuestas
+ *     tags: [Encuestas]
+ *     responses:
+ *       200:
+ *         description: Todas las encuestas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Encuestas'
+ *
+ */
+
+/**
+ * @swagger
+ * /FullData:
+ *   get:
+ *     summary: Retornar todos las encuestas
+ *     tags: [Datos]
+ *     responses:
+ *       200:
+ *         description: Retorna un objeto de datos completo
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Encuestas'
+ *
+ */
+
+/**
+ * @swagger
+ * /DataFilter/{nombre}:
+ *   get:
+ *     summary: Retornar todos las encuestas
+ *     parameters:
+ *       - in: path
+ *         name: nombre
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Nombre de la encuesta que desea retornar
+ *     tags: [Datos]
+ *     responses:
+ *       200:
+ *         description: Retorna un objeto de datos filtrado por nombre
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Encuestas'
+ *
  */
