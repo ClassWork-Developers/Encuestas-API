@@ -127,6 +127,26 @@
  * @swagger
  * components:
  *  schemas:
+ *    Encuestas-Edit:
+ *       type: object
+ *       properties:
+ *         id: 
+ *           type: string
+ *           description: Id del Objeto a Editar
+ *         nombre:
+ *           type: string
+ *           description: Nombre o Titulo de la Encuesta
+ *       required:
+ *         -nombre
+ *       example:
+ *         id: 234923rjf2ri
+ *         nombre: Opiniones Estudiantiles
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
  *    Preguntas:
  *       type: object
  *       properties:
@@ -372,4 +392,22 @@ s
  *               items:
  *                 $ref: '#/components/schemas/Encuestas'
  *
+ */
+
+/**
+ * @swagger
+ * /EditarEncuesta:
+ *   put:
+ *     summary: Edicion de Encuestas
+ *     tags: [Encuestas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Encuestas-Edit'
+ *     responses:
+ *       200:
+ *         description: Success Edit Encuesta!
  */

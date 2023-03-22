@@ -15,6 +15,7 @@ import { CrearRespuesta } from '../controllers/Client/CrearRespuesta.js';
 import { MostrarEncuestas } from '../controllers/Renders/MostrarEncuestas.js';
 import { FullData } from '../controllers/Renders/FullData.js'  
 import { DataFilter } from '../controllers/Renders/DataFilter.js'
+import { EditarEncuesta } from '../controllers/Admin/EditarEncuesta.js'
 
 //ROUTING
 export const routes = Express.Router();
@@ -61,4 +62,8 @@ routes.get('/FullData', FullData, (req, res) => {
 
 routes.get('/DataFilter/:nombre', DataFilter, (req, res) => {
   //Mostrar Datos Filtrados
+})
+
+routes.put('/EditarEncuesta', EditarEncuesta, (req, res) => {
+  //Editar Encuesta
 })
