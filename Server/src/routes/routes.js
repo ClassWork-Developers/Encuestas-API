@@ -13,9 +13,12 @@ import { CrearEncuesta } from '../controllers/Admin/CrearEncuesta.js';
 import { CrearPregunta } from '../controllers/Admin/CrearPregunta.js';
 import { CrearRespuesta } from '../controllers/Client/CrearRespuesta.js';
 import { MostrarEncuestas } from '../controllers/Renders/MostrarEncuestas.js';
-import { FullData } from '../controllers/Renders/FullData.js'  
-import { DataFilter } from '../controllers/Renders/DataFilter.js'
-import { EditarEncuesta } from '../controllers/Admin/EditarEncuesta.js'
+import { FullData } from '../controllers/Renders/FullData.js';
+import { DataFilter } from '../controllers/Renders/DataFilter.js';
+import { EditarEncuesta } from '../controllers/Admin/EditarEncuesta.js';
+import { EliminarEncuesta } from '../controllers/Admin/EliminarEncuesta.js'
+import { EliminarPregunta } from '../controllers/Admin/EliminarPregunta.js';
+import { EliminarRespuesta } from '../controllers/Admin/EliminarRespuesta.js';
 
 //ROUTING
 export const routes = Express.Router();
@@ -58,12 +61,24 @@ routes.get('/MostrarEncuestas', MostrarEncuestas, (req, res) => {
 
 routes.get('/FullData', FullData, (req, res) => {
   //Mostrar Full Data
-})
+});
 
 routes.get('/DataFilter/:nombre', DataFilter, (req, res) => {
   //Mostrar Datos Filtrados
-})
+});
 
 routes.put('/EditarEncuesta', EditarEncuesta, (req, res) => {
   //Editar Encuesta
-})
+});
+
+routes.delete('/EliminarEncuesta', EliminarEncuesta, (req, res) => {
+  //Eliminar Encuesta
+});
+
+routes.delete('/EliminarPregunta', EliminarPregunta, (req, res) => {
+  //Eliminar Pregunta
+});
+
+routes.delete('/EliminarRespuesta', EliminarRespuesta, (req, res) => {
+  //Eliminar Respuesta
+});

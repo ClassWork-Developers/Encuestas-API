@@ -127,6 +127,22 @@
  * @swagger
  * components:
  *  schemas:
+ *    Encuestas-Delete:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: Id de la encuesta a eliminar
+ *       required:
+ *         -id
+ *       example:
+ *         id: 234234234j23k4jk23
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
  *    Encuestas-Edit:
  *       type: object
  *       properties:
@@ -410,4 +426,58 @@ s
  *     responses:
  *       200:
  *         description: Success Edit Encuesta!
+ */
+
+/**
+ * @swagger
+ * /EliminarEncuesta:
+ *   delete:
+ *     summary: Eliminacion de Encuestas
+ *     tags: [Encuestas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Encuestas-Delete'
+ *     responses:
+ *       200:
+ *         description: Success Edit Encuesta!
+ */
+
+/**
+ * @swagger
+ * /EliminarPregunta:
+ *   delete:
+ *     summary: Eliminacion de Pregunta
+ *     tags: [Preguntas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Encuestas-Delete'
+ *     responses:
+ *       200:
+ *         description: Success Delete Pregunta!
+ */
+
+/**
+ * @swagger
+ * /EliminarRespuesta:
+ *   delete:
+ *     summary: Eliminacion de Respuesta
+ *     tags: [Respuestas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Encuestas-Delete'
+ *     responses:
+ *       200:
+ *         description: Success Delete Respuesta!
  */
