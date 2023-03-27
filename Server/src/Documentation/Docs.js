@@ -1,4 +1,13 @@
 //APARTADO DE SCHEMAS DEL SWAGGER
+/**
+ * @swagger
+ * components:
+ *   securitySchemes:
+ *     bearerAuth:
+ *       type: http
+ *       scheme: bearer
+ *       bearerFormat: JWT
+ */
 
 /**
  * @swagger
@@ -315,6 +324,8 @@ s
  *           schema:
  *             type: object
  *             $ref: '#/components/schemas/Encuestas'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: Success New Encuesta!
@@ -333,6 +344,8 @@ s
  *           schema:
  *             type: object
  *             $ref: '#/components/schemas/Preguntas'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: Success New Pregunta!
@@ -351,6 +364,8 @@ s
  *           schema:
  *             type: object
  *             $ref: '#/components/schemas/Respuestas'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: Success New Respuesta!
@@ -430,6 +445,8 @@ s
  *           schema:
  *             type: object
  *             $ref: '#/components/schemas/Encuestas-Edit'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: Success Edit Encuesta!
@@ -448,6 +465,8 @@ s
  *           schema:
  *             type: object
  *             $ref: '#/components/schemas/Encuestas-Delete'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: Success Edit Encuesta!
@@ -466,6 +485,8 @@ s
  *           schema:
  *             type: object
  *             $ref: '#/components/schemas/Encuestas-Delete'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: Success Delete Pregunta!
@@ -484,6 +505,8 @@ s
  *           schema:
  *             type: object
  *             $ref: '#/components/schemas/Encuestas-Delete'
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: Success Delete Respuesta!

@@ -23,6 +23,9 @@ import { EliminarRespuesta } from '../controllers/Admin/EliminarRespuesta.js';
 //ROUTING
 export const routes = Express.Router();
 
+//TOKEN VERIFY
+import { verify } from '../controllers/Verify.js'
+
 //RUTAS POST
 
 routes.post('/CrearAdmin', CrearAdmin, (req, res) => {
@@ -41,15 +44,15 @@ routes.post('/LoginUser', LoginUser, (req, res) => {
   //Login User
 });
 
-routes.post('/CrearEncuesta', CrearEncuesta, (req, res) => {
+routes.post('/CrearEncuesta', verify, CrearEncuesta, (req, res) => {
   //Crear una Encuesta
 });
 
-routes.post('/CrearPregunta', CrearPregunta, (req, res) => {
+routes.post('/CrearPregunta', verify, CrearPregunta, (req, res) => {
   //Crear una Pregunta en una Encuesta
 });
 
-routes.post('/CrearRespuesta', CrearRespuesta, (req, res) => {
+routes.post('/CrearRespuesta', verify, CrearRespuesta, (req, res) => {
   //Crear una Respuesta en una Encuesta
 });
 
@@ -67,18 +70,18 @@ routes.get('/DataFilter/:nombre', DataFilter, (req, res) => {
   //Mostrar Datos Filtrados
 });
 
-routes.put('/EditarEncuesta', EditarEncuesta, (req, res) => {
+routes.put('/EditarEncuesta', verify, EditarEncuesta, (req, res) => {
   //Editar Encuesta
 });
 
-routes.delete('/EliminarEncuesta', EliminarEncuesta, (req, res) => {
+routes.delete('/EliminarEncuesta', verify, EliminarEncuesta, (req, res) => {
   //Eliminar Encuesta
 });
 
-routes.delete('/EliminarPregunta', EliminarPregunta, (req, res) => {
+routes.delete('/EliminarPregunta', verify, EliminarPregunta, (req, res) => {
   //Eliminar Pregunta
 });
 
-routes.delete('/EliminarRespuesta', EliminarRespuesta, (req, res) => {
+routes.delete('/EliminarRespuesta', verify, EliminarRespuesta, (req, res) => {
   //Eliminar Respuesta
 });
