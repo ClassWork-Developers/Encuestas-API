@@ -5,4 +5,4 @@ const relacion = mongoose.Schema({
   id_encuesta: String,
 });
 
-export const Relacion = mongoose.model('Relacion', relacion);
+export const RelacionModel = mongoose.model('Relacion', relacion);
