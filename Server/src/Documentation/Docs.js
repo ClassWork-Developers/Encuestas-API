@@ -126,10 +126,15 @@
  *         nombre:
  *           type: string
  *           description: Nombre o Titulo de la Encuesta
+ *         periodo:
+ *           type: string
+ *           description: Periodo Academico
  *       required:
  *         -nombre
+ *         -periodo
  *       example:
  *         nombre: Opiniones Estudiantiles
+ *         periodo: 2023a
  *         open: true
  */
 
@@ -165,10 +170,14 @@
  *         open: 
  *           type: boolean
  *           description: Declara si esta abierto o no el form
+ *         periodo:
+ *           type: string
+ *           description: Periodo Academico
  *       required:
  *         -nombre
  *         -id
  *         -open
+ *         -periodo
  *       example:
  *         id: 234923rjf2ri
  *         nombre: Opiniones Estudiantiles
