@@ -221,12 +221,6 @@
  *         id_usuario:
  *           type: string
  *           description: Id del usuario al cual pertenece la respuesta
- *         nombre:
- *           type: string
- *           description: nombre del usuario
- *         icon:
- *           type: string
- *           description: icono del usuario
  *         respuesta:
  *           type: string
  *           description: Respuesta del Usuario
@@ -234,18 +228,35 @@
  *         -id_encuesta
  *         -id_pregunta
  *         -id_usuario
- *         -nombre
- *         -icon
  *         -respuesta
  *       example:
  *         id_encuesta: 641a37ea1753dbd2b79999b9
  *         id_pregunta: 641a37fb1753dbd2b79999bb
  *         id_usuario: 6419ff7a2b894018a12f0012 
- *         nombre: Kevin
- *         icon: www.my.icon.com
  *         respuesta: Con respecto a este tema me encuentro a favor de lo opinado
  */
-s
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Crear-Relaciones:
+ *       type: object
+ *       properties:
+ *         id_pregunta:
+ *           type: string
+ *           description: Id de la Pregunta
+ *         id_encuesta:
+ *           type: string
+ *           description: Id de la encuesta a la que pertenece
+ *       required:
+ *         -id_pregunta
+ *         -id_encuesta
+ *       example:
+ *         id_pregunta: 3452g4ggergb
+ *         id_encuesta: 34fbh675655g
+ */
+
 //APARTADO DE DOCUMENTACION POR RUTA
 
 /**
@@ -519,4 +530,24 @@ s
  *     responses:
  *       200:
  *         description: Success Delete Respuesta!
+ */
+
+/**
+ * @swagger
+ * /CrearRelacion:
+ *   post:
+ *     summary: Crear Relacion
+ *     tags: [Relacion]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Crear-Relaciones'
+ *     security:
+ *      - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Success New Encuesta!
  */
