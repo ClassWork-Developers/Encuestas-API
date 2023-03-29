@@ -16,6 +16,7 @@ import { MostrarEncuestas } from '../controllers/Renders/MostrarEncuestas.js';
 import { FullData } from '../controllers/Renders/FullData.js';
 import { DataFilter } from '../controllers/Renders/DataFilter.js';
 import { EditarEncuesta } from '../controllers/Admin/EditarEncuesta.js';
+import { EditarPregunta } from '../controllers/Admin/EditarPregunta.js';
 import { EliminarEncuesta } from '../controllers/Admin/EliminarEncuesta.js';
 import { EliminarPregunta } from '../controllers/Admin/EliminarPregunta.js';
 import { EliminarRespuesta } from '../controllers/Admin/EliminarRespuesta.js';
@@ -73,6 +74,10 @@ routes.get('/DataFilter/:nombre', DataFilter, (req, res) => {
 
 routes.put('/EditarEncuesta', verify, EditarEncuesta, (req, res) => {
   //Editar Encuesta
+});
+
+routes.put('/EditarPregunta', verify, EditarPregunta, (req, res) => {
+  //Editar Pregunta
 });
 
 routes.delete('/EliminarEncuesta', verify, EliminarEncuesta, (req, res) => {
