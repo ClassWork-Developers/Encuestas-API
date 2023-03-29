@@ -16,15 +16,16 @@ import { MostrarEncuestas } from '../controllers/Renders/MostrarEncuestas.js';
 import { FullData } from '../controllers/Renders/FullData.js';
 import { DataFilter } from '../controllers/Renders/DataFilter.js';
 import { EditarEncuesta } from '../controllers/Admin/EditarEncuesta.js';
-import { EliminarEncuesta } from '../controllers/Admin/EliminarEncuesta.js'
+import { EliminarEncuesta } from '../controllers/Admin/EliminarEncuesta.js';
 import { EliminarPregunta } from '../controllers/Admin/EliminarPregunta.js';
 import { EliminarRespuesta } from '../controllers/Admin/EliminarRespuesta.js';
+import { CrearRelacion } from '../controllers/Admin/CrearRelacion.js';
 
 //ROUTING
 export const routes = Express.Router();
 
 //TOKEN VERIFY
-import { verify } from '../controllers/Verify.js'
+import { verify } from '../controllers/Verify.js';
 
 //RUTAS POST
 
@@ -84,4 +85,8 @@ routes.delete('/EliminarPregunta', verify, EliminarPregunta, (req, res) => {
 
 routes.delete('/EliminarRespuesta', verify, EliminarRespuesta, (req, res) => {
   //Eliminar Respuesta
+});
+
+routes.post('/CrearRelacion', verify, CrearRelacion, (req, res) => {
+  //Crear Relacion
 });
