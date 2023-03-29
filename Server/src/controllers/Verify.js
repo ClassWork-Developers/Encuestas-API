@@ -11,6 +11,7 @@ export function verify(req, res, next) {
     });
   };
   const decodificado = jwt.verify(token, jwt_hash);
+  
   console.log(decodificado)
   if (Date.now() > decodificado.exp) {
     res.json({ err: 'El tiempo ya expiró' });
