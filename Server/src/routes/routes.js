@@ -26,7 +26,7 @@ export const routes = Express.Router();
 
 //TOKEN VERIFY
 import { verify } from '../controllers/Verify.js';
-import { AuthVerify } from '../controllers/AuthVerify/js'
+import { AuthVerify } from '../controllers/AuthVerify.js'
 
 //RUTAS POST
 

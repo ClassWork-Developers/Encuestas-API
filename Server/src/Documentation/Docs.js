@@ -315,6 +315,24 @@
 
 /**
  * @swagger
+ * /AuthRoute:
+ *   post:
+ *     summary: Crea un Nuevo Usuario con OAuth
+ *     tags: [Usuarios]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Users-Register'
+ *     responses:
+ *       200:
+ *         description: Success New User!
+ */
+
+/**
+ * @swagger
  * /LoginUser:
  *   post:
  *     summary: Login de Usuarios
