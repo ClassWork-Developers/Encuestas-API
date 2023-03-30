@@ -429,6 +429,24 @@
 
 /**
  * @swagger
+ * /MostrarPreguntas:
+ *   get:
+ *     summary: Retornar todos las preguntas
+ *     tags: [Preguntas]
+ *     responses:
+ *       200:
+ *         description: Todas las preguntas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Preguntas'
+ *
+ */
+
+/**
+ * @swagger
  * /FullData:
  *   get:
  *     summary: Retornar todos las encuestas
