@@ -1,6 +1,8 @@
 import { UsuariosModel } from '../../Schemas/Usuarios.js';
 import bcrypt from 'bcrypt';
 import { SaltRounds } from '../../index.js';
+import jwt from 'jsonwebtoken';
+import { token as jwt_hash } from '../../index.js';
 
 export async function CrearUser(req, res) {
   const { correo, nombre, clave, icon } = req.body;
@@ -14,7 +16,16 @@ export async function CrearUser(req, res) {
       icon: icon,
     });
     await Usuario.save()
-      .then(() => res.send(true))
+      .then((response) => {
+        let token = jwt.sign({ nombre: nombre, exp: Date.now() + 60 * 50000 }, jwt_hash);
+        res.json({
+          nombre: nombre,
+          token: token,
+          status: true,
+          icon: icon,
+          id: response._id,
+        });
+      })
       .catch((err) => {
         console.log(err);
         res.send(false);
