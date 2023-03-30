@@ -431,7 +431,7 @@
  * @swagger
  * /DataFilter/{nombre}:
  *   get:
- *     summary: Retornar todos las encuestas
+ *     summary: Retornar una encuesta
  *     parameters:
  *       - in: path
  *         name: nombre
