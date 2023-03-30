@@ -26,6 +26,7 @@ export const routes = Express.Router();
 
 //TOKEN VERIFY
 import { verify } from '../controllers/Verify.js';
+import { AuthVerify } from '../controllers/AuthVerify/js'
 
 //RUTAS POST
 
@@ -89,4 +90,9 @@ routes.delete('/EliminarRespuesta', verify, EliminarRespuesta, (req, res) => {
 
 routes.post('/CrearRelacion', verify, CrearRelacion, (req, res) => {
   //Crear Relacion
+});
+
+//Auth Route
+routes.post('/AuthRoute', AuthVerify, (req, res) => {
+  //Ruta para el Auth
 });
