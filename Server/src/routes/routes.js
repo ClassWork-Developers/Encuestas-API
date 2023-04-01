@@ -21,6 +21,8 @@ import { EliminarPregunta } from "../controllers/Admin/EliminarPregunta.js";
 import { EliminarRespuesta } from "../controllers/Admin/EliminarRespuesta.js";
 import { CrearRelacion } from "../controllers/Admin/CrearRelacion.js";
 import { MostrarPreguntas } from "../controllers/Renders/MostrarPreguntas.js";
+import { EditarPregunta } from '../controllers/Admin/EditarPregunta.js';
+
 
 //ROUTING
 export const routes = Express.Router();
@@ -79,7 +81,11 @@ routes.put("/EditarEncuesta", verify, EditarEncuesta, (req, res) => {
   //Editar Encuesta
 });
 
-routes.delete("/EliminarEncuesta", verify, EliminarEncuesta, (req, res) => {
+routes.put('/EditarPregunta', verify, EditarPregunta, (req, res) => {
+  //Editar Pregunta
+});
+
+routes.delete('/EliminarEncuesta', verify, EliminarEncuesta, (req, res) => {
   //Eliminar Encuesta
 });
 

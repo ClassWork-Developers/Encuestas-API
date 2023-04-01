@@ -10,10 +10,7 @@ export async function CrearRelacion(req, res) {
 
   Relacion.save()
     .then((response) => {
-      res.send(true);
+      res.status(201).json({r: true});
     })
-    .catch((err) => {
-      console.log(err);
-      res.send(false);
-    });
+    .catch((err) => res.status(404).json({msg: 'Ha ocurrido un error creando la relación pregunta-encuesta, intentelo de nuevo. ' + err, r: false}));
 }

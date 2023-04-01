@@ -10,7 +10,7 @@ export async function CrearPregunta(req, res) {
 
   Pregunta.save()
     .then((response) => {
-      res.json({ status: true, id_pregunta: response._id, id_encuesta: response.id_encuesta });
+      res.status(201).json({ data: {status: true, id_pregunta: response._id, id_encuesta: response.id_encuesta}, r: true });
       let Relacion = new RelacionModel({
         id_pregunta: response._id,
         id_encuesta: id_encuesta,
@@ -20,5 +20,5 @@ export async function CrearPregunta(req, res) {
         console.log(obj);
       });
     })
-    .catch(() => res.send(false));
+    .catch((err) => res.status(404).json({msg: 'Ha ocurrido un error creando la pregunta, intentelo de nuevo. ' + err, r: false}));
 }

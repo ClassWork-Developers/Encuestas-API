@@ -10,8 +10,6 @@ export async function EliminarPregunta(req, res) {
   });
 
   await PreguntasModel.findByIdAndDelete(id)
-    .then(() => res.send(true))
-    .catch((err) => {
-      res.send(false);
-    });
+  .then(() => res.status(201).json({r: true}))
+  .catch((err) => res.status(404).json({msg: 'Ha ocurrido un error eliminando la pregunta, intentelo de nuevo. ' + err, r: false}))
 }

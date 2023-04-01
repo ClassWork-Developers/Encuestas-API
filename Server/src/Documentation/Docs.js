@@ -182,6 +182,7 @@
  *         id: 234923rjf2ri
  *         nombre: Opiniones Estudiantiles
  *         open: true
+ *         periodo: 2023b
  */
 
 /**
@@ -203,6 +204,27 @@
  *       example:
  *         pregunta: ¿Como te llamas?
  *         id_encuesta: 34fbh675655g
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Preguntas-Edit:
+ *       type: object
+ *       properties:
+ *         id: 
+ *           type: string
+ *           description: Id del Objeto a Editar
+ *         pregunta:
+ *           type: string
+ *           description: Texto o enunciado de la pregunta a editar
+ *       required:
+ *         -id
+ *         -pregunta
+ *       example:
+ *         id: 34fbh675655g
+ *         pregunta: ¿Cómo te llamas?
  */
 
 /**
@@ -506,6 +528,26 @@
  *     responses:
  *       200:
  *         description: Success Edit Encuesta!
+ */
+
+/**
+ * @swagger
+ * /EditarPregunta:
+ *   put:
+ *     summary: Edicion de Preguntas
+ *     tags: [Preguntas]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Preguntas-Edit'
+ *     security:
+ *      - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Success Edit Pregunta!
  */
 
 /**
