@@ -14,12 +14,12 @@ export function verify(req, res, next) {
     
     console.log(decodificado)
     if (Date.now() > decodificado.exp) {
-      res.json({ err: 'El tiempo ya expiró' });
+      res.status(401).json({ msg: 'El tiempo del token ya expiró', r: false});
     } else {
       req.userid = decodificado.id;
       next();
     }
   } catch (error) {
-    res.json({ err: 'No se ha recibido el token'})
+    res.status(401).json({ msg: 'No se ha recibido el token', r: false})
   }
 }

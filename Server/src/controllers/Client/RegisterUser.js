@@ -14,12 +14,9 @@ export async function CrearUser(req, res) {
       icon: icon,
     });
     await Usuario.save()
-      .then(() => res.send(true))
-      .catch((err) => {
-        console.log(err);
-        res.send(false);
-      });
+    .then(() => res.status(201).json({r: true}))
+    .catch((err) => res.status(404).json({msg: 'Ha ocurrido un error registrandose, intentelo de nuevo. ' + err, r: false}))
   } else {
-    res.send(false);
+    res.status(404).json({msg: 'Correo ya registrado', r: false});
   }
 }

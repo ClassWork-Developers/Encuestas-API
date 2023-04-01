@@ -13,6 +13,6 @@ export async function CrearRespuesta(req, res) {
   });
 
   Respuesta.save()
-    .then(() => res.send(true))
-    .catch(() => res.send(false));
+  .then(() => res.status(201).json({r: true}))
+  .catch((err) => res.status(404).json({msg: 'Ha ocurrido un error registrando la respuesta, intentelo de nuevo. ' + err, r: false}))
 }

@@ -17,15 +17,12 @@ export async function CrearAdmin(req, res) {
         icon: icon,
       });
       await Administrador.save()
-        .then(() => res.send(true))
-        .catch((err) => {
-          console.log(err);
-          res.send(false);
-        });
+      .then(() => res.status(201).json({r: true}))
+      .catch((err) => res.status(404).json({msg: 'Ha ocurrido un error registrando el profesor, intentelo de nuevo. ' + err, r: false}))
     } else {
-      res.send(false);
+      res.status(401).json({msg: 'Compruebe la clave especial', r: false})
     }
   } else {
-    res.send(false);
+    res.status(404).json({msg: 'Correo ya registrado', r: false});
   }
 }

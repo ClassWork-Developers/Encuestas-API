@@ -10,6 +10,6 @@ export async function CrearEncuesta(req, res) {
   });
 
   Encuesta.save()
-    .then((response) => res.json({ status: true, id: response._id }))
-    .catch(() => res.send(false));
+    .then((response) => res.status(201).json({ data: {status: true, id: response._id}, r: true }))
+    .catch((err) => res.status(404).json({msg: 'Ha ocurrido un error creando la encuesta, intentelo de nuevo. ' + err, r: false}));
 }
