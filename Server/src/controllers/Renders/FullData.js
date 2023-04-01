@@ -15,6 +15,7 @@ export async function FullData(req, res) {
     FullData.Encuestas.push({
       id: encuestas[index]._id,
       nombre: encuestas[index].nombre,
+      descripcion: encuestas[index].descripcion,
       preguntas: [],
     });
   }
@@ -47,4 +48,3 @@ export async function FullData(req, res) {
 
   res.json(FullData);
 }
-

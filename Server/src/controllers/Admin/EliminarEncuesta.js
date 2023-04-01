@@ -1,14 +1,15 @@
 import { EncuestasModel } from '../../Schemas/Encuestas.js';
-import { PreguntasModel } from '../../Schemas/Preguntas.js';
+import { RelacionModel } from '../../Schemas/Relacion.js';
 import { RespuestasModel } from '../../Schemas/Respuestas.js';
 
 export async function EliminarEncuesta(req, res) {
   const { id } = req.body;
-  let preguntas = await PreguntasModel.find({ id_encuesta: id });
+
+  let relaciones = await RelacionModel.find({ id_encuesta: id });
   let respuestas = await RespuestasModel.find({ id_encuesta: id });
 
-  preguntas.forEach(async (obj) => {
-    await PreguntasModel.findByIdAndDelete(obj._id);
+  relaciones.forEach(async (obj) => {
+    await RelacionModel.findByIdAndDelete(obj._id);
   });
 
   respuestas.forEach(async (obj) => {
@@ -16,6 +17,6 @@ export async function EliminarEncuesta(req, res) {
   });
 
   await EncuestasModel.findByIdAndDelete(id)
-    .then(() => res.status(201).json({r: true}))
-    .catch((err) => res.status(404).json({msg: 'Ha ocurrido un error eliminando la encuesta, intentelo de nuevo. ' + err, r: false}))
+    .then(() => res.status(201).json({ r: true }))
+    .catch((err) => res.status(404).json({ msg: 'Ha ocurrido un error eliminando la encuesta, intentelo de nuevo. ' + err, r: false }));
 }
