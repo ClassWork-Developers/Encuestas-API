@@ -315,6 +315,24 @@
 
 /**
  * @swagger
+ * /AuthRoute:
+ *   post:
+ *     summary: Crea un Nuevo Usuario con OAuth
+ *     tags: [Usuarios]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             $ref: '#/components/schemas/Users-Register'
+ *     responses:
+ *       200:
+ *         description: Success New User!
+ */
+
+/**
+ * @swagger
  * /LoginUser:
  *   post:
  *     summary: Login de Usuarios
@@ -406,6 +424,24 @@
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Encuestas'
+ *
+ */
+
+/**
+ * @swagger
+ * /MostrarPreguntas:
+ *   get:
+ *     summary: Retornar todos las preguntas
+ *     tags: [Preguntas]
+ *     responses:
+ *       200:
+ *         description: Todas las preguntas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Preguntas'
  *
  */
 
