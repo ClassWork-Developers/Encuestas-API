@@ -24,7 +24,7 @@ export async function CrearAdmin(req, res) {
             { nombre: nombre, exp: Date.now() + 60 * 50000 },
             jwt_hash
           );
-          res.status(201).res.json({
+          res.status(201).json({
             r: true,
             nombre: nombre,
             token: token,
