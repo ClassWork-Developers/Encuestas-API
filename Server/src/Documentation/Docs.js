@@ -126,6 +126,9 @@
  *         nombre:
  *           type: string
  *           description: Nombre o Titulo de la Encuesta
+ *         descripcion: 
+ *           type: string
+ *           description: Descripcion de la Encuesta
  *         periodo:
  *           type: string
  *           description: Periodo Academico
@@ -158,6 +161,28 @@
  * @swagger
  * components:
  *  schemas:
+ *    Preguntas-Delete:
+ *       type: object
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: Id de la pregunta a eliminar
+ *         id_encuesta: 
+ *           type: string
+ *           description: Id de la Encuesta de la pregunta a eliminar
+ *         
+ *       required:
+ *         -id
+ *         -id_encuesta
+ *       example:
+ *         id: 234234234j23k4jk23
+ *         id_encuesta: 345rtewfewf23rf
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
  *    Encuestas-Edit:
  *       type: object
  *       properties:
@@ -167,6 +192,9 @@
  *         nombre:
  *           type: string
  *           description: Nombre o Titulo de la Encuesta
+ *         descripcion: 
+ *           type: string
+ *           description: Descripcion de la Encuesta
  *         open: 
  *           type: boolean
  *           description: Declara si esta abierto o no el form
@@ -582,7 +610,7 @@
  *         application/json:
  *           schema:
  *             type: object
- *             $ref: '#/components/schemas/Encuestas-Delete'
+ *             $ref: '#/components/schemas/Preguntas-Delete'
  *     security:
  *      - bearerAuth: []
  *     responses:

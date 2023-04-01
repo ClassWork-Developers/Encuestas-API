@@ -18,6 +18,7 @@ export async function DataFilter(req, res) {
     FullData.Encuestas.push({
       id: encuestas[index]._id,
       nombre: encuestas[index].nombre,
+      descripcion: encuestas[index].descripcion,
       preguntas: [],
     });
   }
