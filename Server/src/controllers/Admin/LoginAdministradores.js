@@ -12,12 +12,12 @@ export async function LoginAdmin(req, res) {
     bcrypt.compare(clave, resultado[0].clave).then((resp) => {
       if (resp == true) {
         let token = jwt.sign({ nombre: resultado[0].nombre, exp: Date.now() + 60 * 50000 }, jwt_hash);
-        res.status(201).json({ data: {
+        res.status(201).json({
           nombre: resultado[0].nombre,
           token: token,
           status: true,
           icon: resultado[0].icon,
-          id: resultado[0]._id},
+          id: resultado[0]._id,
           r: true
         });
       } else {
