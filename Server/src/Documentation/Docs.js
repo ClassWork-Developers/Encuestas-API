@@ -223,10 +223,14 @@
  *         array_preguntas:
  *           type: array
  *           description: Texto o enunciado de la pregunta
+ *         id_encuesta:
+ *           type: string
+ *           description: Id de la Encuesta
  *       required:
  *         -array_preguntas
  *       example:
- *         array_preguntas: [{"pregunta": "¿Como te llamas?", ¨id_encuesta¨: "523490534gfj"}]
+ *         array_preguntas: [{"pregunta": "¿Como te llamas?"}]
+ *         id_encuesta: 323ru89023urfefj
  */
 
 /**

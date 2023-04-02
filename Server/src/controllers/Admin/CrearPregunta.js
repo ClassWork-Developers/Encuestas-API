@@ -3,7 +3,7 @@ import { RelacionModel } from '../../Schemas/Relacion.js';
 
 export async function CrearPregunta(req, res) {
   // const { pregunta, id_encuesta } = req.body;
-  const { array_preguntas } = req.body;
+  const { array_preguntas, id_encuesta } = req.body;
 
   var target = array_preguntas.length - 1;
 
@@ -18,7 +18,7 @@ export async function CrearPregunta(req, res) {
           res.status(201).json({ data: { status: true, id_pregunta: response._id, id_encuesta: response.id_encuesta }, r: true });
           let Relacion = new RelacionModel({
             id_pregunta: response._id,
-            id_encuesta: element.id_encuesta,
+            id_encuesta: id_encuesta,
           });
           Relacion.save().then((res) => {
             let obj = { status: true, id_: res._id };
@@ -30,7 +30,7 @@ export async function CrearPregunta(req, res) {
       Pregunta.save().then((response) => {
         let Relacion = new RelacionModel({
           id_pregunta: response._id,
-          id_encuesta: element.id_encuesta,
+          id_encuesta: id_encuesta,
         });
         Relacion.save().then((res) => {
           let obj = { status: true, id_: res._id };
