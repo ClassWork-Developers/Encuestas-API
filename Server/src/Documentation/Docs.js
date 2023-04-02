@@ -292,17 +292,17 @@
  *    Crear-Relaciones:
  *       type: object
  *       properties:
- *         id_pregunta:
- *           type: string
- *           description: Id de la Pregunta
+ *         relaciones:
+ *           type: array
+ *           description: Array que contiene las relaciones
  *         id_encuesta:
  *           type: string
  *           description: Id de la encuesta a la que pertenece
  *       required:
- *         -id_pregunta
+ *         -relaciones
  *         -id_encuesta
  *       example:
- *         id_pregunta: 3452g4ggergb
+ *         relaciones: [{"id_pregunta": "325235jioj"}, {"id_pregunta": "53409hjgvov9"}]
  *         id_encuesta: 34fbh675655g
  */
 
