@@ -126,7 +126,7 @@
  *         nombre:
  *           type: string
  *           description: Nombre o Titulo de la Encuesta
- *         descripcion: 
+ *         descripcion:
  *           type: string
  *           description: Descripcion de la Encuesta
  *         periodo:
@@ -167,10 +167,10 @@
  *         id:
  *           type: string
  *           description: Id de la pregunta a eliminar
- *         id_encuesta: 
+ *         id_encuesta:
  *           type: string
  *           description: Id de la Encuesta de la pregunta a eliminar
- *         
+ *
  *       required:
  *         -id
  *         -id_encuesta
@@ -186,16 +186,16 @@
  *    Encuestas-Edit:
  *       type: object
  *       properties:
- *         id: 
+ *         id:
  *           type: string
  *           description: Id del Objeto a Editar
  *         nombre:
  *           type: string
  *           description: Nombre o Titulo de la Encuesta
- *         descripcion: 
+ *         descripcion:
  *           type: string
  *           description: Descripcion de la Encuesta
- *         open: 
+ *         open:
  *           type: boolean
  *           description: Declara si esta abierto o no el form
  *         periodo:
@@ -220,18 +220,13 @@
  *    Preguntas:
  *       type: object
  *       properties:
- *         pregunta:
- *           type: string
+ *         array_preguntas:
+ *           type: array
  *           description: Texto o enunciado de la pregunta
- *         id_encuesta:
- *           type: string
- *           description: Id de la encuesta a la que pertenece
  *       required:
- *         -pregunta
- *         -id_encuesta
+ *         -array_preguntas
  *       example:
- *         pregunta: ¿Como te llamas?
- *         id_encuesta: 34fbh675655g
+ *         array_preguntas: [{"pregunta": "¿Como te llamas?", ¨id_encuesta¨: "523490534gfj"}]
  */
 
 /**
@@ -241,7 +236,7 @@
  *    Preguntas-Edit:
  *       type: object
  *       properties:
- *         id: 
+ *         id:
  *           type: string
  *           description: Id del Objeto a Editar
  *         pregunta:
@@ -282,7 +277,7 @@
  *       example:
  *         id_encuesta: 641a37ea1753dbd2b79999b9
  *         id_pregunta: 641a37fb1753dbd2b79999bb
- *         id_usuario: 6419ff7a2b894018a12f0012 
+ *         id_usuario: 6419ff7a2b894018a12f0012
  *         respuesta: Con respecto a este tema me encuentro a favor de lo opinado
  */
 
