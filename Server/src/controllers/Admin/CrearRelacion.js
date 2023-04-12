@@ -8,7 +8,7 @@ export async function CrearRelacion(req, res) {
 
   relaciones.forEach((element, index) => {
     let Relacion = new RelacionModel({
-      id_pregunta: element.id_pregunta,
+      id_pregunta: element.id,
       id_encuesta: id_encuesta,
     });
 

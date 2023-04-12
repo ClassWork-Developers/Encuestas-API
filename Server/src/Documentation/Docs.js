@@ -310,7 +310,7 @@
  *         -relaciones
  *         -id_encuesta
  *       example:
- *         relaciones: [{"id_pregunta": "325235jioj"}, {"id_pregunta": "53409hjgvov9"}]
+ *         relaciones: [{"id": "325235jioj"}, {"id": "53409hjgvov9"}]
  *         id_encuesta: 34fbh675655g
  */
 
