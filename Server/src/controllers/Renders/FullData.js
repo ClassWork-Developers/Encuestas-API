@@ -14,6 +14,7 @@ export async function FullData(req, res) {
   for (let index = 0; index < encuestas.length; index++) {
     FullData.Encuestas.push({
       id: encuestas[index]._id,
+      propietario: encuestas[index].propietario,
       nombre: encuestas[index].nombre,
       descripcion: encuestas[index].descripcion,
       preguntas: [],

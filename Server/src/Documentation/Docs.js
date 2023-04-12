@@ -123,6 +123,9 @@
  *    Encuestas:
  *       type: object
  *       properties:
+ *         propietario: 
+ *           type: string
+ *           description: Propietario
  *         nombre:
  *           type: string
  *           description: Nombre o Titulo de la Encuesta
@@ -136,6 +139,7 @@
  *         -nombre
  *         -periodo
  *       example:
+ *         propietario: 4h23h4iuh2fhlhj
  *         nombre: Opiniones Estudiantiles
  *         periodo: 2023a
  *         open: true
@@ -189,6 +193,9 @@
  *         id:
  *           type: string
  *           description: Id del Objeto a Editar
+ *         propietario:
+ *           type: string
+ *           description: Propietario
  *         nombre:
  *           type: string
  *           description: Nombre o Titulo de la Encuesta
@@ -208,6 +215,7 @@
  *         -periodo
  *       example:
  *         id: 234923rjf2ri
+ *         propietario: j34823805h24h
  *         nombre: Opiniones Estudiantiles
  *         open: true
  *         periodo: 2023b

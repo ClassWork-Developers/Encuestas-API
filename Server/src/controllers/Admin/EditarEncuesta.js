@@ -1,11 +1,12 @@
 import { EncuestasModel } from '../../Schemas/Encuestas.js';
 
 export function EditarEncuesta(req, res) {
-  const { id, nombre, descripcion, open, periodo } = req.body;
+  const { id, propietario ,nombre, descripcion, open, periodo } = req.body;
   EncuestasModel.updateOne(
     { _id: id },
     {
       $set: {
+        propietario: propietario,
         nombre: nombre,
         descripcion: descripcion,
         open: open,
