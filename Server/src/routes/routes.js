@@ -71,7 +71,7 @@ routes.get("/FullData", FullData, (req, res) => {
   //Mostrar Full Data
 });
 
-routes.get("/DataFilter/:nombre", DataFilter, (req, res) => {
+routes.get("/DataFilter/:id", DataFilter, (req, res) => {
   //Mostrar Datos Filtrados
 });
 routes.get("/MostrarPreguntas", MostrarPreguntas, (req, res) => {
