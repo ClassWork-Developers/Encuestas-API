@@ -6,7 +6,7 @@ import { RelacionModel } from '../../Schemas/Relacion.js';
 export async function DataFilter(req, res) {
   const { id } = req.params;
 
-  let encuestas = await EncuestasModel.find({ _id: id });
+  let encuestas = await EncuestasModel.find({ propietario: id });
   let relacion = await RelacionModel.find();
   let preguntas = await PreguntasModel.find();
   let respuestas = await RespuestasModel.find();
