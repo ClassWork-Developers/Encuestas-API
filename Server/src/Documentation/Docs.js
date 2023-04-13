@@ -522,20 +522,20 @@
 
 /**
  * @swagger
- * /DataFilter/{nombre}:
+ * /DataFilter/{id}:
  *   get:
  *     summary: Retornar una encuesta
  *     parameters:
  *       - in: path
- *         name: nombre
+ *         name: id
  *         schema:
  *           type: string
  *         required: true
- *         description: Nombre de la encuesta que desea retornar
+ *         description: id del usuario
  *     tags: [Datos]
  *     responses:
  *       200:
- *         description: Retorna un objeto de datos filtrado por nombre
+ *         description: Retorna un objeto de datos filtrado por id del usuariosua
  *         content:
  *           application/json:
  *             schema:

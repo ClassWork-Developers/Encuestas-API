@@ -4,9 +4,9 @@ import { RespuestasModel } from '../../Schemas/Respuestas.js';
 import { RelacionModel } from '../../Schemas/Relacion.js';
 
 export async function DataFilter(req, res) {
-  const { nombre } = req.params;
+  const { id } = req.params;
 
-  let encuestas = await EncuestasModel.find({ nombre: nombre });
+  let encuestas = await EncuestasModel.find({ _id: id });
   let relacion = await RelacionModel.find();
   let preguntas = await PreguntasModel.find();
   let respuestas = await RespuestasModel.find();
