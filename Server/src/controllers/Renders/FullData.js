@@ -28,6 +28,7 @@ export async function FullData(req, res) {
             let obj = {
               id: preguntas[q]._id,
               pregunta: preguntas[q].pregunta,
+              vof: preguntas[q].vof,
               respuestas: [],
             };
             FullData.Encuestas[i].preguntas.push(obj);
