@@ -5,6 +5,7 @@ const encuestas = mongoose.Schema({
   nombre: String,
   descripcion: String,
   open: Boolean,
+  tema: String,
   periodo: String,
 });
 

@@ -1,13 +1,14 @@
 import { EncuestasModel } from '../../Schemas/Encuestas.js';
 
 export async function CrearEncuesta(req, res) {
-  const { propietario, nombre, descripcion, periodo } = req.body;
+  const { propietario, nombre, descripcion, tema, periodo } = req.body;
 
   let Encuesta = new EncuestasModel({
     propietario: propietario,
     nombre: nombre,
     descripcion: descripcion,
     open: true,
+    tema: tema,
     periodo: periodo,
   });
 
