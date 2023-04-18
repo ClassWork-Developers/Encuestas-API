@@ -17,6 +17,7 @@ export async function FullData(req, res) {
       propietario: encuestas[index].propietario,
       nombre: encuestas[index].nombre,
       descripcion: encuestas[index].descripcion,
+      tema: encuestas[index].tema,
       preguntas: [],
     });
   }
