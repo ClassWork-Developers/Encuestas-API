@@ -1,12 +1,13 @@
 import { PreguntasModel } from '../../Schemas/Preguntas.js';
 
 export function EditarPregunta(req, res) {
-  const { id, pregunta } = req.body;
+  const { id, pregunta, vof } = req.body;
   PreguntasModel.updateOne(
     { _id: id },
     {
       $set: {
         pregunta: pregunta,
+        vof: vof,
       },
     }
   )

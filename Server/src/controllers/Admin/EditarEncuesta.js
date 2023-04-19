@@ -1,7 +1,7 @@
 import { EncuestasModel } from '../../Schemas/Encuestas.js';
 
 export function EditarEncuesta(req, res) {
-  const { id, propietario ,nombre, descripcion, open, periodo } = req.body;
+  const { id, propietario ,nombre, descripcion, open, tema, periodo } = req.body;
   EncuestasModel.updateOne(
     { _id: id },
     {
@@ -10,6 +10,7 @@ export function EditarEncuesta(req, res) {
         nombre: nombre,
         descripcion: descripcion,
         open: open,
+        tema: tema,
         periodo: periodo,
       },
     }

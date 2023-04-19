@@ -17,6 +17,7 @@ export async function FullData(req, res) {
       propietario: encuestas[index].propietario,
       nombre: encuestas[index].nombre,
       descripcion: encuestas[index].descripcion,
+      tema: encuestas[index].tema,
       preguntas: [],
     });
   }
@@ -28,6 +29,7 @@ export async function FullData(req, res) {
             let obj = {
               id: preguntas[q]._id,
               pregunta: preguntas[q].pregunta,
+              vof: preguntas[q].vof,
               respuestas: [],
             };
             FullData.Encuestas[i].preguntas.push(obj);

@@ -8,6 +8,7 @@ export async function CrearPregunta(req, res) {
     array_preguntas.forEach((element, index) => {
       let Pregunta = new PreguntasModel({
         pregunta: element.pregunta,
+        vof: element.vof,
       });
       Pregunta.save()
         .then((response) => {
